@@ -1,11 +1,8 @@
 load( "@bazel_skylib//lib:shell.bzl", "shell")
-
-
 load("@bazel_skylib//lib:paths.bzl", "paths")
 
 
 def _bash_file_rule_impl(ctx):
-    print(ctx.bin_dir.path)
     source_file = ctx.attr.dep.files.to_list()[0]
     out_file = ctx.actions.declare_file(ctx.label.name) 
     

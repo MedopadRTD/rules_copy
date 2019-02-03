@@ -48,7 +48,6 @@ function find_bin_dir(){
 # end helpers
 
 BUILD_ABS_DESTINTATION="$(rlocation $BUILD_LABEL_DESTINTATION)"
-echo $BUILD_ABS_DESTINTATION
 DESTINATION=$(dirname $BUILD_ABS_DESTINTATION)
 
 find_bin_dir $PWD
@@ -56,6 +55,4 @@ abs_bin_dir=$find_bin_dir_result
 
 
 SOURCE=$abs_bin_dir"/"$SOURCE
-echo $DESTINATION
-echo $PWD
 cp -rf $SOURCE $DESTINATION

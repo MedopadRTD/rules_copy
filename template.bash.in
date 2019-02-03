@@ -37,8 +37,8 @@ fi
 function find_bin_dir(){
     local EXECROOT_LOC=$(echo $1 | awk 'END{print index($0,"/execroot/")}')
     local PROJECT_LOC=$((EXECROOT_LOC+9))
-    local BIN_DIR_WITHOUT_PROJECT_NAME=${TEST:0:$PROJECT_LOC}
-    local PROJECT_NAME_WITH_EXTRA=${TEST:$PROJECT_LOC}
+    local BIN_DIR_WITHOUT_PROJECT_NAME=${$1:0:$PROJECT_LOC}
+    local PROJECT_NAME_WITH_EXTRA=${$1:$PROJECT_LOC}
     local END_INDEX_PROJECT_LOC=$(echo $PROJECT_NAME_WITH_EXTRA | awk 'END{print index($0,"/")}')
     local END_INDEX_PROJECT_LOC=$((END_INDEX_PROJECT_LOC-1))
     local PROJECT_NAME=${PROJECT_NAME_WITH_EXTRA:0:END_INDEX_PROJECT_LOC}
